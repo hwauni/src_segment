@@ -2,15 +2,17 @@
 #!/usr/bin/python3
 
 import os
+import logging
+import multiprocessing
 from multiprocessing import Process, Lock, current_process
 
 
 def ms_output(*args):
     idx = 0
-    process_id = os.getpid()
+    process_name = current_process().name
 
     for value in args:
-        print('{0} output to {1} by process id: {2}'.format(idx, value, process_id))
+        print('{0} output to {1} by process name: {2}'.format(idx, value, process_name))
         idx = idx + 1
 
 
@@ -21,8 +23,8 @@ class ProcessMgr:
             return False
         self.worker = worker
 
-    def produce_process(self, *args):
-        process = Process(target=self.worker, args=(args))
+    def produce_process(self, pname, *args):
+        process = Process(target=self.worker, name=pname, args=(args))
         self.process_list.append(process)
 
     def start(self):
@@ -35,8 +37,12 @@ class ProcessMgr:
 
 
 if __name__ == "__main__":
+    multiprocessing.log_to_stderr()
+    logger = multiprocessing.get_logger()
+    logger.setLevel(logging.INFO)
+
     ProcessMgr = ProcessMgr(ms_output)
-    ProcessMgr.produce_process(1, "test1")
-    ProcessMgr.produce_process(3, "test2")
+    ProcessMgr.produce_process('proc1', 1, "test1")
+    ProcessMgr.produce_process('', 3, "test2")
     ProcessMgr.start()
     ProcessMgr.stop()
