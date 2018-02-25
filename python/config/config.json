@@ -1,0 +1,8 @@
+{
+    "DEFAULT": {
+                "TLA_LOG_DIR": "/home/msg/log/TLA",
+                "TF_LOG_DIR": "home/msg/log/SVS_MTI",
+                "AGT_LOG_DIR": "/home/msg/log/SVS_RTSPAGT",
+                "SVS_LOG_DIR": "/home/msg/log/SVS" 
+               }
+}
