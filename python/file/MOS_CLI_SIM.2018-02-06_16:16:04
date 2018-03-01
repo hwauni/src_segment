@@ -1,0 +1,37 @@
+[16:16:04.771] [DBUG] [7f481117a840] (mcs_main.c:90 main) msg_http_init
+[16:16:04.771] [TRCE] [7f481117a840] (mcs_config.c:556 _mcs_load_config) [GENERAL_CONF] log_level(0)
+[16:16:04.771] [TRCE] [7f481117a840] (mcs_config.c:570 _mcs_load_config) [GENERAL_CONF] packet_dump_flag(1)
+[16:16:04.771] [TRCE] [7f481117a840] (mcs_config.c:587 _mcs_load_config) [CLIENT_CONF] client_conn_mode(2)
+[16:16:04.772] [TRCE] [7f481117a840] (mcs_config.c:601 _mcs_load_config) [CLIENT_CONF] client_ip(192.168.0.101)
+[16:16:04.772] [TRCE] [7f481117a840] (mcs_config.c:615 _mcs_load_config) [CLIENT_CONF] client_ip_count(1)
+[16:16:04.772] [TRCE] [7f481117a840] (mcs_config.c:629 _mcs_load_config) [CLIENT_CONF] server_ip(1.235.191.83)
+[16:16:04.772] [TRCE] [7f481117a840] (mcs_config.c:643 _mcs_load_config) [CLIENT_CONF] server_port(80)
+[16:16:04.772] [TRCE] [7f481117a840] (mcs_config.c:657 _mcs_load_config) [CLIENT_CONF] conn_cnt(1)
+[16:16:04.772] [TRCE] [7f481117a840] (mcs_config.c:671 _mcs_load_config) [CLIENT_CONF] scen_cnt(1)
+[16:16:04.772] [TRCE] [7f481117a840] (mcs_config.c:685 _mcs_load_config) [CLIENT_CONF] scen_sleep_msec(0)
+[16:16:04.772] [TRCE] [7f481117a840] (mcs_config.c:721 _mcs_load_config) [SCEN_CONF_0] scen_req_cnt(1)
+[16:16:04.772] [TRCE] [7f481117a840] (mcs_config.c:754 _mcs_load_config) [SCEN_CONF_0_0] req_method(GET)
+[16:16:04.772] [TRCE] [7f481117a840] (mcs_config.c:769 _mcs_load_config) [SCEN_CONF_0_0] req_uri(/home/moswp/contents/g_0001.gif)
+[16:16:04.772] [TRCE] [7f481117a840] (mcs_config.c:784 _mcs_load_config) [SCEN_CONF_0_0] host()
+[16:16:04.772] [TRCE] [7f481117a840] (mcs_config.c:799 _mcs_load_config) [SCEN_CONF_0_0] user_agent(Mozilla/5.0 (iPhone; CPU iPhone OS 9_3_3 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko))
+[16:16:04.781] [TRCE] [7f481117a840] (mcs_main.c:132 main) MOS_CLI_SIM is started !!!
+[16:16:04.832] [DBUG] [7f480b3ac700] (mcs_mti_handler.c:460 _mcs_mti_write_succ_evt_proc) _mcs_mti_write_succ_evt_proc (conn_key=0_1.235.191.83_80_5a795634_becba_1c4d8cf1_0)
+[16:16:04.900] [DBUG] [7f480b3ac700] (msg_http.c:503 msg_http_parser_create) hp = 0xa089dc30
+[16:16:04.900] [DBUG] [7f480b3ac700] (msg_http.c:1666 msg_http_parse) hdr_len = 103, in_size = 103
+[16:16:04.900] [DBUG] [7f480b3ac700] (msg_http.c:1735 msg_http_parse) HTTP MSG PARSE (3)
+[16:16:04.900] [DBUG] [7f480b3ac700] (mcs_mti_handler.c:317 _mcs_mti_read_evt_proc) HTTP_PARSE_RET_BD_RECVING(conn_key=0_1.235.191.83_80_5a795634_becba_1c4d8cf1_0)
+[16:16:04.902] [DBUG] [7f480b3ac700] (msg_http.c:858 msg_http_parse_body) non-chunked remain info (content_length:2939, bd_remain_len:2856, bd_remain_rd_idx:0, bd_remain(0xa089df90), next_http_msg_len(0)
+[16:16:04.902] [DBUG] [7f480b3ac700] (mcs_mti_handler.c:317 _mcs_mti_read_evt_proc) HTTP_PARSE_RET_BD_RECVING(conn_key=0_1.235.191.83_80_5a795634_becba_1c4d8cf1_0)
+[16:16:04.903] [DBUG] [7f480b3ac700] (msg_http.c:847 msg_http_parse_body)  NON-chunked remain info (content_length:2939, bd_remain_len:2939, bd_remain_rd_idx:0, bd_remain(0xa089df90), next_http_msg_len(0)
+[16:16:04.903] [DBUG] [7f480b3ac700] (mcs_mti_handler.c:321 _mcs_mti_read_evt_proc) HTTP_PARSE_RET_ALL_DONE(conn_key=0_1.235.191.83_80_5a795634_becba_1c4d8cf1_0)
+[16:16:04.903] [TRCE] [7f480b3ac700] (mcs_util.c:86 mcs_dump_http_packet) 
+RECV HTTP MESSAGE FROM Unknown(conn_key=0_1.235.191.83_80_5a795634_becba_1c4d8cf1_0)
+HTTP MSG(size=3042) ::= {
+HTTP/1.1 200 Ok
+Content-Type: image/gif
+Date: Tue, 06 Feb 2018 07:15:58 GMT
+Content-Length: 2939
+
+GIF89aW 
+}
+[16:16:07.083] [TRCE] [7f481117a840] (mcs_main.c:168 _mcs_signal_handler) MOS_CLI_SIM is stopped !!!(signal=2)
